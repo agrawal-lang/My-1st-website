@@ -100,39 +100,41 @@
         </section>
     </main>
   </body>
-  <script>
-let timer=document.querySelector("#timer")
-let first=document.querySelector("#first")
-let second=document.querySelector("#second")
-let third=document.querySelector("#third")
+ <script>
+window.onload = function () {
+    let first = document.querySelector("#first");
+    let second = document.querySelector("#second");
+    let third = document.querySelector("#third");
 
-    let count=0
-    time=setInterval(()=>{
-        if(count<=50){
-            first.innerText=`${count++}+`
+    let count = 0;
+    let time = setInterval(() => {
+        if (count <= 50) {
+            first.innerText = `${count++}+`;
+        } else {
+            clearInterval(time);
         }
-        else{
-              clearInterval(time)
+    }, 100);
+
+    let count1 = 0;
+    let time1 = setInterval(() => {
+        if (count1 <= 100) {
+            second.innerText = `${count1++}+`;
+        } else {
+            clearInterval(time1);
         }
-    },100)
-    let count1=0
-    time1=setInterval(()=>{
-        if(count1<=100){
-            second.innerText=`${count1++}+`
+    }, 70);
+
+    let count2 = 0;
+    let time2 = setInterval(() => {
+        if (count2 <= 80) {
+            third.innerText = `${count2++}+`;
+        } else {
+            clearInterval(time2);
         }
-        else{
-              clearInterval(time1)
-        }
-    },70)
-    let count2=0
-    time2=setInterval(()=>{
-        if(count2<=80){
-            third.innerText=`${count2++}+`
-        }
-        else{
-              clearInterval(time2)
-        }
-    },90)
-  </script>
+    }, 90);
+};
+</script>
+
 
 </html>
+
